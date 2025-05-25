@@ -98,6 +98,7 @@ def create_tv_style_plotly_chart(df: pd.DataFrame, chart_title: str = "TSLA Stoc
                                              marker=dict(symbol=m_config['symbol'], color=m_config['color'], size=m_config.get('size', 12), line=dict(width=1.5, color=m_config['border_color'])),
                                              hoverinfo='skip', legendgroup='signals', showlegend=show_legend_flags[m_config['name']]), row=1, col=1)
                     show_legend_flags[m_config['name']] = False 
+        
 
     fig.update_layout(
         title=None, 
@@ -134,4 +135,5 @@ def create_tv_style_plotly_chart(df: pd.DataFrame, chart_title: str = "TSLA Stoc
                               annotation_text=f"<b>{latest_close:.2f}</b>", annotation_position="top right",
                               annotation_font_size=10, annotation_font_color=tv_colors['bg'], 
                               annotation_bgcolor=tv_colors['current_price_line'], row=1, col=1)
+    
     return fig
